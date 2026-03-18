@@ -38,7 +38,7 @@ st.sidebar.markdown( '### Selecione uma data limite' )
 
 date_slider = st.sidebar.slider(
     'Até que valor ?',
-    value=pd.datetime( 2023, 3, 28 ),
+    value=pd.Timestamp( 2023, 3, 28 ),
     min_value = pd.Timestamp( 2022, 2, 11 ),
     max_value = pd.Timestamp( 2022, 4, 6 ),
     format = 'DD-MM-YYYY' )
