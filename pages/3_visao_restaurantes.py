@@ -43,9 +43,9 @@ st.sidebar.markdown( '### Selecione uma data limite' )
 
 date_slider = st.sidebar.slider(
     'Até que valor ?',
-    value=pd.Timestamp('2023-03-28'),
-    min_value=pd.Timestamp('2022-02-11'),
-    max_value=pd.Timestamp('2022-04-06'),
+    value=date(2023, 3, 28),
+    min_value=date(2022, 2, 11),
+    max_value=date(2022, 4, 6),
     format='DD-MM-YYYY'
 )
 
@@ -63,7 +63,7 @@ st.sidebar.markdown( '#### Powered ComunidadeDS'  )
 # ----------------------------------------
 
 # Filtro de Data
-linhas_selecionadas = df1['Order_Date'] < date_slider
+linhas_selecionadas = df1[df1['Order_Date'] <= pd.to_datetime(date_slider)]
 df1 = df1.loc[ linhas_selecionadas, : ]
 
 # Filtro de Traffic 
