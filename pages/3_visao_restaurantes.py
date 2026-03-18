@@ -63,7 +63,7 @@ st.sidebar.markdown( '#### Powered ComunidadeDS'  )
 # ----------------------------------------
 
 # Filtro de Data
-linhas_selecionadas = df1[df1['Order_Date'] <= pd.to_datetime(date_slider)]
+linhas_selecionadas = df1['Order_Date'] < pd.to_datetime(date_slider)
 df1 = df1.loc[ linhas_selecionadas, : ]
 
 # Filtro de Traffic 
