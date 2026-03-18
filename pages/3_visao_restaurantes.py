@@ -8,7 +8,7 @@ import folium
 import re
 
 st.set_page_config( page_title='Visão Restaurantes', layout='wide' )
-
+from datetime import date
 from PIL import Image
 from streamlit_folium import folium_static
 from haversine import haversine
@@ -43,9 +43,9 @@ st.sidebar.markdown( '### Selecione uma data limite' )
 
 date_slider = st.sidebar.slider(
     'Até que valor ?',
-    value=pd.datetime.date( 2023, 3, 28 ),
-    min_value = pd.datetime.date( 2022, 2, 11 ),
-    max_value = pd.datetime.date( 2022, 4, 6 ),
+    value=pd.date( 2023, 3, 28 ),
+    min_value = pd.ddate( 2022, 2, 11 ),
+    max_value = pd.date( 2022, 4, 6 ),
     format = 'DD-MM-YYYY' )
 
 st.sidebar.markdown( """---""" )
